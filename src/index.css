@@ -1,0 +1,350 @@
+/* Custom font import — must be before @tailwind directives */
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS Custom Properties */
+:root {
+  --pagoda-sky: #38bdf8;
+  --pagoda-sun: #fbbf24;
+  --pagoda-cloud: #e0f2fe;
+  --pagoda-night: #0f172a;
+  --animation-duration-slow: 20s;
+  --animation-duration-medium: 10s;
+  --animation-duration-fast: 3s;
+}
+
+/* Base */
+html {
+  scroll-behavior: smooth;
+  font-family: 'Instrument Sans', 'Inter', system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* =====================
+   KEYFRAME ANIMATIONS
+   ===================== */
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes ray-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rain-drop {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+@keyframes rain-trickle {
+  0% {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 0.8;
+  }
+
+  75% {
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: translateY(140%);
+    opacity: 0;
+  }
+}
+
+.animate-rain-trickle {
+  animation: rain-trickle 4s linear infinite;
+}
+
+@keyframes snow-fall {
+  0% {
+    transform: translateY(-10px) translateX(0);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: translateY(100vh) translateX(30px);
+    opacity: 0;
+  }
+}
+
+@keyframes lightning-flash {
+
+  0%,
+  88%,
+  92%,
+  100% {
+    background: transparent;
+  }
+
+  90% {
+    background: rgba(255, 255, 255, 0.15);
+  }
+}
+
+@keyframes fog-drift {
+
+  0%,
+  100% {
+    transform: translateX(0px) scale(1);
+  }
+
+  50% {
+    transform: translateX(30px) scale(1.02);
+  }
+}
+
+@keyframes cloud-drift {
+  0% {
+    transform: translateX(-120%);
+  }
+
+  100% {
+    transform: translateX(110vw);
+  }
+}
+
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes star-twinkle {
+
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes radar-pulse {
+  0% {
+    transform: scale(0.88);
+    opacity: 0.75;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(0.88);
+    opacity: 0.75;
+  }
+}
+
+@keyframes raindrop-fall {
+  0% {
+    transform: translateY(-6px) scaleY(0.7);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(26px) scaleY(1.2);
+    opacity: 0;
+  }
+}
+
+/* =====================
+   ANIMATION CLASSES
+   ===================== */
+
+.animate-bounce-slow {
+  animation: bounce-slow 4.5s ease-in-out infinite;
+}
+
+.animate-radar-pulse {
+  animation: radar-pulse 3.8s ease-in-out infinite;
+}
+
+.animate-raindrop-fall {
+  animation: raindrop-fall 1.3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-ray-rotate {
+  animation: ray-rotate 20s linear infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-fog-drift {
+  animation: fog-drift 15s ease-in-out infinite;
+}
+
+.animate-cloud-drift {
+  animation: cloud-drift 25s linear infinite;
+}
+
+.animate-lightning {
+  animation: lightning-flash 4s ease-in-out infinite;
+}
+
+/* =====================
+   CUSTOM SCROLLBAR
+   ===================== */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
+}
+
+/* =====================
+   PREFERS-REDUCED-MOTION
+   ===================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* =====================
+   LEAFLET OVERRIDES
+   ===================== */
+
+.leaflet-container {
+  font-family: 'Instrument Sans', 'Inter', system-ui, sans-serif;
+  border-radius: 0;
+}
+
+.leaflet-control-attribution {
+  display: none !important;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* =====================
+   GLASS UTILITIES
+   ===================== */
+
+.glass {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-dark {
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 64" fill="none">
+  <defs>
+    <linearGradient id="nubila-fav-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#7ad5e6" />
+      <stop offset="100%" stopColor="#55bed3" />
+    </linearGradient>
+    <linearGradient id="nubila-fav-slate" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#5a7a96" />
+      <stop offset="100%" stopColor="#43647f" />
+    </linearGradient>
+  </defs>
+
+  <!-- Top Half: Sky Cyan Cloud -->
+  <path
+    d="M 12 34
+       C 8 30, 8 20, 16 15
+       C 23 10, 30 11, 33 14
+       C 37 6, 51 6, 56 14
+       C 63 20, 63 29, 58 34
+       L 41 34
+       L 28 44
+       L 15 44
+       C 12 44, 11 39, 12 34 Z"
+    fill="url(#nubila-fav-cyan)"
+  />
+
+  <!-- Bottom Half: Slate Blue Inverted Cloud -->
+  <path
+    d="M 14 50
+       C 11 50, 9 46, 14 46
+       L 27 46
+       L 40 36
+       L 57 36
+       C 61 36, 61 41, 58 45
+       C 63 50, 61 58, 55 60
+       C 48 64, 38 64, 34 59
+       C 30 63, 20 63, 16 57
+       C 13 54, 13 51, 14 50 Z"
+    fill="url(#nubila-fav-slate)"
+  />
+</svg>
